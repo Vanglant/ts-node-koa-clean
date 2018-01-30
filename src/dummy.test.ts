@@ -1,4 +1,4 @@
-import "jest";
+import 'jest';
 
 describe("Jest Tests", () => {
     test("Verify Tests Work", () => {
