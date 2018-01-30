@@ -1,5 +1,4 @@
-# van-node-starter
-Starter Typescript Node project, including reload on change using Nodemon/TS-Node, easy debug with VSCode and testing with Jest.
+# Clean Architecture with Koa, Typescript.
 
 To start using it: 
 
