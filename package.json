@@ -1,0 +1,46 @@
+{
+  "name": "example_auth",
+  "version": "1.0.0",
+  "description": "An example auth Nodejs App with React front.",
+  "main": "index.js",
+  "author": "Miguel Vílchez",
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node --inspect=5858 src/server.ts",
+    "dev": "nodemon",
+    "build": "tsc",
+    "tslint": "tslint -c tslint.json -p tsconfig.json",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ]
+  },
+  "dependencies": {
+    "koa": "^2.4.1",
+    "koa-logger": "^3.1.0",
+    "koa-router": "^7.3.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^22.0.1",
+    "@types/koa": "^2.0.43",
+    "@types/koa-router": "^7.0.27",
+    "@types/node": "^9.3.0",
+    "jest": "^22.1.4",
+    "nodemon": "^1.14.11",
+    "ts-jest": "^22.0.1",
+    "ts-node": "^4.1.0",
+    "tslint-config-airbnb": "^5.4.2",
+    "tslint-config-prettier": "^1.6.0",
+    "typescript": "^2.6.2"
+  }
+}
