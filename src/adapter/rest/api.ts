@@ -7,7 +7,7 @@ import * as Koa from 'koa';
 const logger = require('koa-logger')
 
 // import * as Router from 'koa-router';
-import accountResource from './account.resource';
+import accountResource from './routes/account';
 
 class Api {
     public app: Koa;
