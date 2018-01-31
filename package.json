@@ -6,7 +6,7 @@
   "author": "Miguel Vílchez",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node --inspect=5858 src/server.ts",
+    "start": "ts-node --inspect=5858 src/container.ts",
     "dev": "nodemon",
     "build": "tsc",
     "tslint": "tslint -c tslint.json -p tsconfig.json",
@@ -28,11 +28,14 @@
   "dependencies": {
     "koa": "^2.4.1",
     "koa-logger": "^3.1.0",
-    "koa-router": "^7.3.0"
+    "koa-router": "^7.3.0",
+    "reflect-metadata": "^0.1.12",
+    "typeorm": "^0.1.11"
   },
   "devDependencies": {
     "@types/jest": "^22.0.1",
     "@types/koa": "^2.0.43",
+    "@types/koa-logger": "^3.1.0",
     "@types/koa-router": "^7.0.27",
     "@types/node": "^9.3.0",
     "jest": "^22.1.4",
