@@ -59,4 +59,7 @@ typings/
 
 # dist files
 dist
+
 .idea
+# Orm configuration
+ormconfig.json
