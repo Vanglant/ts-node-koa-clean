@@ -1,4 +1,4 @@
-# Clean Architecture with Koa, Typescript.
+# IN PROGRESS Clean Architecture with Koa, Typescript.
 
 To start using it: 
 
