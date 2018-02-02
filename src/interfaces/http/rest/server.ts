@@ -3,6 +3,7 @@
  * Returns the api that will be used to create the http server
  *
  */
+/*
 import * as Koa from 'koa';
 import * as KoaLogger from 'koa-logger';
 import router from './router';
@@ -28,4 +29,4 @@ export default class Server {
         });
     }
 
-}
+}*/

@@ -1,3 +1,4 @@
+/*
 import server from '../interfaces/http/rest/server';
 import database from '../infra/database/database';
 
@@ -14,4 +15,4 @@ export default class Application {
             await this.connection.create();
             await this.server.start();
     }
-}
+}*/

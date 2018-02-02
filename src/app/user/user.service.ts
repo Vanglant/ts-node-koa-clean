@@ -1,5 +1,8 @@
 import TypeOrmUserRepository from '../../infra/user/typeorm.user.repository';
+import { injectable } from 'inversify';
 
+// Hacer interfaz?
+@injectable()
 export class UserService {
    private userRepository: TypeOrmUserRepository;
    constructor() {

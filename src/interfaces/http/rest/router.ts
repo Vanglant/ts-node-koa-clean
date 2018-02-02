@@ -1,6 +1,7 @@
 /**
  * Account resource should return the routes
  */
+/*
 import * as KoaRouter from 'koa-router';
 import AccountController from './controllers/account.controller';
 
@@ -14,4 +15,4 @@ class Router {
         this.router.use(AccountController.routes());
     }
 }
-export default new Router().router;
+export default new Router().router;*/
