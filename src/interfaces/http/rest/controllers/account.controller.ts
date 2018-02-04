@@ -5,7 +5,7 @@ import { controller, httpGet, interfaces } from 'inversify-koa-utils';
 import * as Router from 'koa-router';
 import { inject, injectable } from 'inversify';
 import { UserService } from '../../../../app/user/user.service';
-import TYPES from '../../../../types';
+import TYPES from '../../../../config/types';
 
 @injectable()
 @controller('/users')

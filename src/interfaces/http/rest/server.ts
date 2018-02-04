@@ -1,32 +1,37 @@
-/**
- * api.ts
- * Returns the api that will be used to create the http server
- *
- */
-/*
+import 'reflect-metadata';
+import { InversifyKoaServer } from 'inversify-koa-utils';
+import container from '../../../config/inversify.config';
 import * as Koa from 'koa';
-import * as KoaLogger from 'koa-logger';
-import router from './router';
+import * as KoaRouter from 'koa-router';
+import { injectable } from 'inversify';
 
-export default class Server {
-    public koa: Koa;
-    public port;
+@injectable()
+export class KoaServer {
+    private app: Koa;
+    private router: KoaRouter;
+    private options: KoaRouter.IRouterOptions;
+    private server: InversifyKoaServer;
+
     constructor() {
-        // Abstract as config
+        this.app = new Koa();
+        this.options = {prefix: '/users'};
+        this.router = new KoaRouter(this.options);
+        this.server = new InversifyKoaServer(container);
+        this.configure();
+        this.start();
 
-        this.port = process.env.PORT || 3000;
-        this.koa = new Koa();
-        this.koa.use(KoaLogger());
-        this.koa.use(router.routes());
     }
-    async start() {
-        return new Promise((resolve) => {
-            const http = this.koa
-                .listen(this.port, () => {
-                    const port = http.address().port;
-                    console.log(`Listening at port ${port}`);
-                });
+    private setMiddleware(app: Koa) {
+
+    }
+    private configure() {
+        this.server.setConfig((app: Koa) => {
+            this.setMiddleware(app);
         });
     }
 
-}*/
+    private start() {
+        let serverInstance = this.server.build();
+        serverInstance.listen(3000);
+    }
+}

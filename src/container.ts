@@ -1,49 +1,21 @@
-// Abstract away from the container
-/*
-
-import Application from './app/application';
-
-const application = new Application();
-
-application.start().catch(() => {
-    process.exit();
-});*/
-import 'reflect-metadata';
-import * as Koa from 'koa';
-import container from './inversify.config';
-import * as KoaRouter from 'koa-router';
-import TYPES from './types';
-import { createConnection } from 'typeorm';
-import { InversifyKoaServer } from 'inversify-koa-utils';
+import { KoaServer } from './interfaces/http/rest/server';
+import { typeOrmConnection } from './infra/database/typeOrmConnection';
 
 class Bootstrap {
-    private app: Koa;
-    private router: KoaRouter;
-    private options: KoaRouter.IRouterOptions;
-
-    constructor() {
-        this.app = new Koa();
-        this.options = {prefix: '/users'};
-        this.router = new KoaRouter(this.options);
+    public startServer() {
+        this.database();
     }
-
-    public server() {
-        createConnection().then(() => {
-            this.startKoaServer();
+    private database() {
+        typeOrmConnection().then(() => {
+            this.api();
         });
     }
 
-    private startKoaServer() {
-
-        let server = new InversifyKoaServer(container);
-        server.setConfig((app: Koa) => {
-
-        });
-        let serverInstance = server.build();
-        serverInstance.listen(3000);
-        console.log('test');
+    private api() {
+        new KoaServer();
     }
 }
+// Extract?
 let bootstrap = new Bootstrap();
-bootstrap.server();
+bootstrap.startServer();
 
