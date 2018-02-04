@@ -14,6 +14,14 @@ You also need to modifiy ormconfig.sample.json with your database configuration 
 
 ## TODO:
 
++ [x] TypeOrm Connection.
+
++ [x] Koa Server.
+
++ [x] DI with InversifyJS.
+
++ [x] A base Clean Architecture that I can improve and modify.
+
 + [ ] Make basic tests, probably with Jest to learn about testing.
 
 + [ ] Proper handling of configuration (Dev vs Production).
