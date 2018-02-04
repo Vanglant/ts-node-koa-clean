@@ -14,7 +14,10 @@ You also need to modifiy ormconfig.sample.json with your database configuration 
 
 ## TODO:
 
-[] Make basic tests, probably with Jest to learn about testing.
-[] Proper handling of configuration (Dev vs Production).
-[] Proper logging.
-[] Learn about Koa security best practices and implement it.
++ [ ] Make basic tests, probably with Jest to learn about testing.
+
++ [ ] Proper handling of configuration (Dev vs Production).
+
++ [ ] Proper logging.
+
++ [ ] Learn about Koa security best practices and implement it.
