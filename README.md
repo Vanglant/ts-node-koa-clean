@@ -1,4 +1,4 @@
-# IN PROGRESS Clean Architecture with Koa, Typescript, TypeOrm, Inversify
+# Clean Architecture with Koa, Typescript, TypeOrm, Inversify
 This project is a template made to learn about Clean Architecture and the stack mentioned above.
 It will be updated as serious projects begin to implement new functionality based on this template.
     
