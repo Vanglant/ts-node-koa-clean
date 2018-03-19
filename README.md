@@ -22,10 +22,10 @@ You also need to modifiy ormconfig.sample.json with your database configuration 
 
 + [x] A base Clean Architecture that I can improve and modify.
 
-+ [ ] Make basic tests, probably with Jest to learn about testing.
++ [ ] Make tests with Jest,
 
 + [ ] Proper handling of configuration (Dev vs Production).
 
 + [ ] Proper logging.
 
-+ [ ] Learn about Koa security best practices and implement it.
++ [ ] Koa security best practices.
