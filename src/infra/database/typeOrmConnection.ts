@@ -1,9 +1,9 @@
 import { createConnection, Connection } from "typeorm";
 
-export function typeOrmConnection(): Promise<Connection> {
-    return new Promise((resolve,reject) => {
+export default function typeOrmConnection(): Promise<Connection> {
+    return new Promise((resolve, reject) => {
         createConnection().then(() => {
-         resolve();
+            resolve();
         }).catch((err) => {
             reject(err);
         })

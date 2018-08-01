@@ -1,9 +1,8 @@
-import {Container} from 'inversify';
+import { Container } from 'inversify';
 import TYPES from './types';
-import {AccountController} from '../interfaces/http/rest/controllers/account.controller';
+import { AccountController } from '../interfaces/http/rest/controllers/account.controller';
 import { interfaces, TYPE } from 'inversify-koa-utils';
 import { UserService } from '../app/user/user.service';
-import { KoaServer } from '../interfaces/http/rest/server';
 
 const container = new Container();
 container.bind<interfaces.Controller>(TYPE.Controller).to(AccountController).whenTargetNamed('AccountController');

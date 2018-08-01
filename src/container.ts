@@ -1,21 +1,21 @@
-import { KoaServer } from './interfaces/http/rest/server';
-import { typeOrmConnection } from './infra/database/typeOrmConnection';
+import KoaServer from './interfaces/http/rest/server';
+import typeOrmConnection from './infra/database/typeOrmConnection';
 
-class Bootstrap {
-    public startServer() {
-        this.database();
-    }
-    private database() {
-        typeOrmConnection().then(() => {
-            this.api();
-        });
-    }
+// Server initialization
+const server: KoaServer = new KoaServer();
+Promise.all([
+    typeOrmConnection()
+]).then(() => server.listen(3000));
 
-    private api() {
-        new KoaServer();
-    }
-}
-// Extract?
-let bootstrap = new Bootstrap();
-bootstrap.startServer();
+// Gracefull server stop
+process.on('SIGTERM', () => {
+    // TODO: Implementar el cierre correctamente
+    /* server.close()
+        .then(() => Promise.all([
+            getConnection().close()
+        ]))
+        .then(() => process.exit(0))
+        .catch((err) => process.exit(-1))
+        */
+});
 
